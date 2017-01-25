@@ -1,0 +1,19 @@
+* text=lf
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.c text
+*.h text
+*.php text
+*.inc text
+*.erb text
+*.conf text
+*.html text
+*.js text
+*.css text
+*.less text
+*.scss text
+*.ini text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf

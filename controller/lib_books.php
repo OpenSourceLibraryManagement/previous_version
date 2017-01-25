@@ -1,0 +1,15 @@
+<?php
+
+	/*
+		TODO:: QUERY TO FIND ALL BOOKS THAT ARE ISSUED
+	*/
+	
+	/*
+		TODO:: QUERY TO FIND ALL BOOKS THAT ARE NOT ISSUED
+	*/
+	
+	/*
+		TODO:: QUERY TO FIND ALL BOOKS
+	*/
+
+?>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<li><a href="/abcd" id="x">Click Here</a></li>
+<script>
+!function(){
+	[].forEach.call(
+		document.querySelectorAll('a'),
+		function(a){
+			console.log(a.id)
+			a.addEventListener('click', function(evt){
+				href = evt.target.getAttribute("href")
+				console.log(href)
+				history.pushstate('', 'New URL: '+href, href)
+				evt.preventDefault()
+			})
+		}
+	)
+}();
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Member</title>
+</head>
+
+<body>
+<pre id="x">Click On One of These Buttons</pre>
+<button id="lib" onClick="send('lib')">Library</button>
+<button id="usr" onClick="send('usr')">User</button>
+<script src="ajaxCall.js"></script>
+<script>
+function fnc(data){
+	document.querySelector('#x').innerHTML = data
+}
+function send(id){
+	if(id == 'lib'){
+		var data = 'library_id='+encodeURIComponent('mylib')
+		ajaxCall(data, 'lib_member.php', 'POST', fnc)
+	}
+	else if(id == 'usr'){
+		var data = 'user_id='+encodeURIComponent('bprogyan')
+		ajaxCall(data, 'usr_book.php', 'POST', fnc)
+	}
+	
+}
+</script>
+</body>
+</html>

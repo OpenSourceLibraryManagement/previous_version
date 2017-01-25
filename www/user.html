@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.min.css" type="text/css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>        
+        <link rel="stylesheet" href="css/search-bar.css" type="text/css"/>
+        <link rel="stylesheet" href="css/material-modal.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <title>Material Design | Dashboard</title>        
+    </head>
+    
+    <body>
+        <!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title">Material Design</span>
+              <!-- Displayed only in Mobile -->
+              <div class="mdl-layout-spacer mdl-cell--hide-tablet mdl-cell--hide-desktop"></div>
+
+              <!-- Search -->
+              <!-- Displayed on Computer and Tablet -->
+              <div class="mdh-expandable-search mdl-cell--hide-phone">
+                <i class="material-icons">search</i>
+                <form action="#">
+                  <input type="text" placeholder="Search" size="1">
+                </form>
+              </div>
+        
+              <!-- Displayed on mobile -->
+              <div class="mdl-layout-spacer mdl-cell--hide-tablet mdl-cell--hide-desktop"></div>
+              <!-- Search button -->
+              <button class="mdh-toggle-search mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-tablet mdl-cell--hide-desktop">
+                <i class="material-icons">search</i>
+              </button>
+              
+              <!-- Notification icon -->
+              <div class="notification" style="display:none;">
+				  <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">message</div>
+              </div>
+
+              <!-- Log Out Button -->
+              <div class="mdl-cell--hide-phone">
+              	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent nav-button" id="logout">Log Out</button>
+              </div>
+              <div class="mdl-cell--hide-tablet mdl-cell--hide-desktop nav-button">
+              	<label class="mdl-button mdl-js-button mdl-button--icon material-icons" title="Logout">
+                	<i class="material-icons">power_settings_new</i>
+                </label>            
+              </div>
+            </div>
+          </header>
+          <div class="mdl-layout__drawer">
+            <div class="mdl-layout-title">
+              <!-- Contact Chip -->
+              <span class="mdl-chip mdl-chip--contact">
+                  <img class="mdl-chip__contact" src="images/default/user.png"></img>
+                  <span class="mdl-chip__text">John Smith</span>
+              </span>
+            </div>
+            <!-- Navigation Items -->
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="#">Books</a>
+              <a class="mdl-navigation__link" href="#">Membership</a>
+              <a class="mdl-navigation__link" href="#">Settings</a>
+            </nav>
+          </div>
+          <main class="mdl-layout__content">
+            <div class="page-content" id="Welcome" style="margin: 50px;">
+            	<!-- BEGIN CONTENT [Welcome] -->
+                <h1> Welcome, John Smith </h1>
+                <!-- END CONTENT [Welcome] -->
+            </div>
+            <div class="page-content" id="Books" style="display:none">
+            	<!-- BEGIN CONTENT [Books] -->
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                  <div class="mdl-tabs__tab-bar">
+                      <a href="#current-panel" class="mdl-tabs__tab is-active">Your Books</a>
+                      <a href="#available-panel" class="mdl-tabs__tab">Available Books</a>
+                      <a href="#history-panel" class="mdl-tabs__tab">Issue History</a>
+                  </div>
+                
+                  <div class="mdl-tabs__panel is-active" id="current-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric" title="Title">Title</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Author">Author</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Publisher">Publisher</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Edition">Edition</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Library">Library</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Issue">Date of Issue</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Submission">Date of Submission</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Your Rating">Your Rating</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Title">Malgudi Days</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Author">R.K. Narayan</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Publisher">Unknown</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Edition">3</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Harekrishna Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Issue">2016-01-21</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Submission">2016-02-21</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Your Rating">3.5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mdl-tabs__panel" id="available-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric" title="Title">Title</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Author">Author</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Publisher">Publisher</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Edition">Edition</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Library">Library</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Call No">Call No</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Category">Category</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Rating">Rating</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Title">Swami & His Friends</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Author">R.K. Narayan</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Publisher">Unknown</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Edition">5</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Harekrishna Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Call No">XC/101</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Category">Fiction</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Rating">5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mdl-tabs__panel" id="history-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric" title="Title">Title</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Author">Author</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Publisher">Publisher</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Edition">Edition</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Library">Library</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Issue">Date of Issue</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Recieve">Date of Recieve</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Fine">Fine</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Title">Malgudi Days</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Author">R.K. Narayan</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Publisher">Unknown</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Edition">3</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Harekrishna Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Issue">2016-01-21</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Recieve">2016-02-21</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Fine">1.25</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- END CONTENT [Books] -->
+            </div>
+            <div class="page-content" id="Membership" style="display:none">
+            	<!-- BEGIN CONTENT [Membership] -->
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                  <div class="mdl-tabs__tab-bar">
+                      <a href="#active-panel" class="mdl-tabs__tab is-active">Active</a>
+                      <a href="#inactive-panel" class="mdl-tabs__tab">Inactive</a>
+                      <a href="#request-panel" class="mdl-tabs__tab">Requests</a>
+                  </div>
+                
+                  <div class="mdl-tabs__panel is-active" id="active-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric" title="Member ID">Member ID</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Library">Library</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Address">Address</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Contact No">Contact No</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Book Count">Book Count</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Number of Issue">Number of Issue</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Last Issued on">Last Issued on</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Approval">Date of Approval</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Action">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Member ID">1059</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Haripada Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Address">Kolkata</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Contact No">9485786255</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Book Count">5</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Number of Issue">25</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Last Issued On">2016-08-19</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Approval">2016-04-03</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Action">
+                          	 <button class="material-icons mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" title="Delete">delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Member ID">ED/201</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Shyamapada Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Address">Kolkata</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Contact No">9485786255</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Book Count">5</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Number of Issue">25</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Last Issued On">2016-08-19</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Approval">2016-04-03</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Action">
+                          	 <button class="material-icons mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" title="Delete">delete</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mdl-tabs__panel" id="inactive-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric" title="Member ID">Member ID</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Library">Library</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Address">Address</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Contact No">Contact No</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Book Count">Book Count</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Number of Issue">Number of Issue</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Last Issued on">Last Issued on</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Approval">Date of Approval</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Status">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Member ID">1059</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Haripada Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Address">Kolkata</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Contact No">9485786255</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Book Count">5</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Number of Issue">25</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Last Issued On">2016-08-19</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Approval">2016-04-03</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Status">Pending</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Member ID">ED/201</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Shyamapada Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Address">Kolkata</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Contact No">9485786255</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Book Count">5</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Number of Issue">25</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Last Issued On">2016-08-19</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Approval">2016-04-03</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Status">Removed</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mdl-tabs__panel" id="request-panel">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric" title="Request Token">Request Token</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Image">Image</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Library">Library</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Address">Address</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Contact No">Contact No</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Date of Request">Date of Request</th>
+                          <th class="mdl-data-table__cell--non-numeric" title="Action">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Request Token">EC/20X/11</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Image">
+                            <img class="thumbnail" src="images/default/library.png"/>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Haripada Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Address">Barasat</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Contact No">8596254521</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Request">2016-04-03</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Action">
+                          	 <button class="material-icons mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" title="Delete">delete</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Request Token">ED/211</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Image">
+                            <img class="thumbnail" src="images/default/library.png"/>
+                          </td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Library">Harekrishna Library</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Address">Barasat</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Contact No">8596254521</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Date of Request">2016-04-03</td>
+                          <td class="mdl-data-table__cell--non-numeric" data-label="Action">
+                          	 <button class="material-icons mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" title="Delete">delete</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- FAB button -->
+                <button class="material-icons mdl-button mdl-js-button mdl-button--fab mdl-button--accent modal__trigger" id="add_req_btn" data-modal="#add_req">add</button>
+                <!-- Request Form Modal -->
+                <div id="add_req" class="modal modal__bg">
+                    <div class="modal__dialog">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <div class="modal__title">
+                            <h2 class="modal__title-text">New Member Request</h2>
+                          </div>
+            
+                          <span class="mdl-button mdl-button--icon mdl-js-button  material-icons  modal__close"></span>
+                        </div>
+                        <div class="modal__text mdl-grid">
+                       	  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
+                            <form action="#">
+                              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="user_name" value="John Smith" disabled>
+                                <label class="mdl-textfield__label" for="user_name">User Name</label>
+                              </div>
+                              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="lib_name">
+                                <label class="mdl-textfield__label" for="lib_name">Library Name</label>
+                              </div>                            
+                            </form>
+                          </div>
+                          <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-phone">
+                            <!-- Library Details Here -->
+                            Info
+                          </div>
+                        </div>
+                        <div class="modal__footer">
+                          <a class="mdl-button mdl-button--colored mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                            Confirm
+                          </a>
+                          <a class="mdl-button mdl-button--colored mdl-js-button  modal__close">
+                            Close
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+            	</div>
+                <!-- END CONTENT [Membership] -->
+            </div>
+            <div class="page-content" id="Settings" style="display:none;">
+            	<!-- BEGIN CONTENT [Settings] -->
+                <!-- END CONTENT [Settings] -->
+            </div>
+          </main>
+          <footer class="mdl-mini-footer">
+             <div class="mdl-mini-footer__left-section">
+               <!--div class="mdl-logo">Title</div-->
+               <ul class="mdl-mini-footer__link-list">
+                 <li><a href="#">Help</a></li>
+                 <li><a href="#">Privacy & Terms</a></li>
+               </ul>
+            </div>
+          </footer>
+        </div>
+    	<script defer src="https://code.getmdl.io/1.2.0/material.min.js" type="text/javascript"></script>
+        <script src="js/app/searchBar.js" type="text/javascript"></script>        
+        <script src="js/app/material-modal.min.js" type="text/javascript"></script>
+        <script src="js/app/navLink.js" type="text/javascript"></script>
+        <script src="js/app/responsiveTable.js" type="text/javascript"></script>
+    </body>
+</html>

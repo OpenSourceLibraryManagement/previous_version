@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Material Design | Login</title>
+    </head>
+    
+    <body>
+        <form action="/signup" method="post" id="signupForm">
+          <div>
+            <input name="email" type="email" id="email">
+            <label for="email">Email</label>
+          </div>
+          <div>
+            <input name="uname" type="text" id="user_name">
+            <label for="user_name">User Name</label>
+          </div>
+          <div>
+            <input name="pass" type="password" id="password">
+            <label for="password">Password</label>
+          </div>
+          <div>
+            <input name="cpass" type="password" id="cpassword">
+            <label for="cpassword">Confirm Password</label>
+          </div>
+          <div>
+            You are: 
+            <label>
+              <input name="type" type="radio" id="type_u" value="user">
+              <span for="type_u">User</span>
+            </label>
+            <label>
+              <input name="type" type="radio" id="type_l" value="library">
+              <span for="type_l">Library</span>
+            </label>
+          </div>
+        </form>
+        <button id="signupBtn">Sign Up</button>
+      </div>
+      <script src="ajaxCall.js" type="text/javascript"></script>
+      <script src="serialize-0.2.min.js" type="text/javascript"></script>
+      <script>
+	  !function(){document.querySelector('#signupBtn').addEventListener('click', function(){
+		  var Data = serialize(document.querySelector('form')).toString()
+		  console.log(Data)
+		  json = '{ '+ Data.replace(/&/g, ', ').replace(/=/g, ' : ') +' }'
+		  console.log(json)
+		  console.log(JSON.parse(json))
+	  })}()
+      </script>
+    </body>
+</html>

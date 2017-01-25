@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+.mdl-layout__drawer > .mdl-layout-title{
+  background: #09C url(/images/background.jpg) center / cover;
+  line-height: 80x;
+  padding: 10px;
+}
+.mdl-chip--contact{
+  height: 50px;
+  background-color: rgba(0, 153, 204, 0.5);
+}
+.mdl-chip--contact > .mdl-chip__contact{
+  height: 50px;
+  width: 50px;
+}
+.mdl-chip--contact > .mdl-chip__text{
+  font-size: 20px;
+  color: #FFF;
+}
+.mdl-chip--contact > .mdl-chip__text:active{
+  color: #000;
+}
+#loading{
+  margin: 0 auto;
+  display: table;
+}
+.mdl-tabs__tab-bar{
+  margin-bottom: 5px;
+}
+#forgotBtn{
+  background-color: rgba(25, 25, 25, 0.2);
+  color: #FFF;
+}
+.wide-card{
+  width: 100%;
+}
+.wide-card > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+}
+#image {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+#loginForm > .mdl-card__title {
+  background: url(../images/cover_login.png) center / cover;
+}
+#signupForm > .mdl-card__title {
+  background: url(../images/cover_gen.gif) center / cover;
+}
+#authForm > .mdl-card__title {
+  background: url(../images/cover_auth.gif) center / cover;
+}
+.wide-card > .mdl-card__menu {
+  color: #fff;
+}
+.mdl-layout__header-row{
+  padding-left: 60px;
+}
+.notification{
+  padding: 0px 5px;
+}
+#logout{
+  font-weight: bold;
+}
+.mdl-data-table-ext{
+  padding: 5px 10px;
+  margin: 2px;
+  height: 30px;
+}
+.searchTxtHolder{
+  float: right;
+}
+.searchTxt{
+  width: 200px;
+}
+.btnHolder{
+  float: left;
+}
+table{
+  table-layout: fixed;
+  width: 100%;
+}
+th, td{
+  text-align: center !important;
+  white-space: normal;
+}
+th{
+  overflow: hidden;
+}
+.thumbnail{
+  border-radius: 50%;
+  height: 50px;
+  cursor: pointer;
+}
+.thumbnail:hover, .thumbnail:active{
+  background-color: #DDD;
+}
+.text-box{
+  border: 1px solid #CCCCCC;
+}
+.nowrap{
+  white-space: nowrap;
+  text-overflow: ellipse;
+}
+#issue_btn, #acc_btn, #mem_btn, #add_req_btn{
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  box-shadow: 0 1px 1.5px 3px rgba(0,0,0,.12),0 1px 1px 1px rgba(0,0,0,.24);
+  z-index: 2;
+}
+.modal__footer > a{
+  float: right;
+}
+.radio > label{
+  padding: 0 10px;
+}
+.mdl-mini-footer{
+  margin-bottom: 0px !important;
+}
+
+@media screen and (max-width: 700px){
+  .notification{
+    margin-right: -8px;
+  }
+  .thumbnail{
+    height: 30px;
+  }
+  .searchTxtHolder{
+    text-align: center;
+  }
+  #issue_btn, #acc_btn, #mem_btn, #add_req_btn{
+    bottom: 35px;
+  }
+  #loginBtn, #signupBtn, #authBtn{
+    left:30%;
+  }
+  .mdl-mini-footer{
+    padding: 20px 20px !important;
+  }
+}
+
+@media screen and (min-width: 700px){
+  .searchTxtHolder{
+    text-align: right;
+  }
+  #loginBtn, #signupBtn, #authBtn{
+    left:40%;
+  }
+}
